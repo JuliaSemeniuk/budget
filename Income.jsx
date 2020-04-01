@@ -1,16 +1,18 @@
 import React from 'react'
 
-export default class Exes extends React.Component {
+export default class Income extends React.Component {
 
     render () {
-        const { exesArticle, exesTotal } = this.props;        
+        const { incomeArticle, incomeTotal } = this.props;
+        console.log(this.props)
 
-        return (            
+
+        return (
             <div>
                 <table border='1'>
                     <thead alighn='center'>
                         <tr>
-                            <td colSpan='4'>Expands</td>
+                            <td colSpan='4'>Income</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -20,28 +22,28 @@ export default class Exes extends React.Component {
                             <td width='100'>data</td>
                             <td width='100'>delete</td>
                         </tr>
-                        {exesArticle.map((value, index) => {
+                        {incomeArticle.map((value, index) => {
                             return (
                                 <tr key={index}>
                                     <td>{value.title}</td>
                                     <td>{value.amount}</td>
                                     <td>{value.data}</td>
-                                    <td><button onClick={this.props.deleteExesArticle} id={index}>x</button></td>
+                                    <td><button onClick={this.props.deleteIncomeArticle} id={index}>x</button></td>
                                 </tr>
                             )
                         })}
                         <tr>
                             <td colSpan='2'>total</td>
-                            <td colSpan='2'>{exesTotal}</td>
+                            <td colSpan='2'>{incomeTotal}</td>
                         </tr>
                     </tbody>
                 </table>
                 <form>
-                    <p>add exes article</p>
-                    <input onChange={this.props.getExesTitle} placeholder='title' value={this.props.exesTitle}></input><br/>
-                    <input onChange={this.props.getExesAmount} placeholder='amount'value={this.props.exesAmount}></input><br/>
-                    <input onChange={this.props.getExesData} placeholder='data'value={this.props.exesData}></input><br/>
-                    <input onClick={this.props.addExesArticle} type='button'value='Add'></input>
+                    <p>add income article</p>
+                    <input onChange={this.props.getIncomeTitle} placeholder='title' value={this.props.incomeTitle}></input><br/>
+                    <input onChange={this.props.getIncomeAmount} placeholder='amount'value={this.props.incomeAmount}></input><br/>
+                    <input onChange={this.props.getIncomeData} placeholder='data'value={this.props.incomeData}></input><br/>
+                    <input onClick={this.props.addIncomeArticle} type='button'value='Add'></input>
                 </form>
             </div>
         )
